@@ -1,8 +1,27 @@
+import React, {useState} from "react";
+
 function App() {
+    const [data, setData] = useState(0);
+    
+    async function convert() {
+        await fetch('https://localhost:7116/api/UnitConverter', {method: 'post'})
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setData(data);
+            });
+        
+    }
+    
+    function handleSubmit(e: React.FormEvent) {
+        e.preventDefault();
+        convert();
+    }
+    
     return (
         <div>
             <h1>Unit Converter</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="length">Enter length to convert: </label>
                     <input name="length" id="length" />
@@ -27,6 +46,8 @@ function App() {
                 </div>
                 <input type="submit" value="Convert" />
             </form>
+            
+            <h1>Result: {data}</h1>
         </div>
     )
 }
