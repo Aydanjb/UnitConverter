@@ -3,8 +3,8 @@ import React, {useState} from "react";
 function App() {
     const [data, setData] = useState(0);
     
-    async function convert() {
-        await fetch('https://localhost:7116/api/UnitConverter', {method: 'post'})
+    async function convert(formData: FormData) {
+        await fetch('https://localhost:7116/api/UnitConverter', {method: 'post', body: formData})
             .then(response => response.json())
             .then(data => {
                 console.log(data);
@@ -15,7 +15,8 @@ function App() {
     
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
-        convert();
+        const formData = new FormData(e.currentTarget as HTMLFormElement);
+        convert(formData);
     }
     
     return (

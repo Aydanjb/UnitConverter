@@ -7,8 +7,15 @@ namespace UnitConverter.Controllers;
 public class UnitConverterController : Controller
 {
     [HttpPost]
-    public int Test()
+    public int Test([FromForm] FormData data)
     {
-        return 2;
+        return data.Length;
     }
+}
+
+public class FormData
+{
+    public int Length { get; set; }
+    public string From { get; set; }
+    public string To { get; set; }
 }
