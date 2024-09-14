@@ -25,29 +25,29 @@ function App() {
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="length">Enter length to convert: </label>
-                    <input name="length" id="length" />
+                    <input name="value" id="length" />
                 </div>
                 <div>
                     <label htmlFor="from">Unit to convert from: </label>
                     <select name="from" id="from">
-                        <option value="Millimeters">Millimeters</option>
-                        <option value="Centimeters">Centimeters</option>
-                        <option value="Meters">Meters</option>
-                        <option value="Kilometers">Kilometers</option>
+                        <option value={0}>Millimeters</option>
+                        <option value={1}>Centimeters</option>
+                        <option value={2}>Meters</option>
+                        <option value={3}>Kilometers</option>
                     </select>
                 </div>
                 <div>
                     <label htmlFor="to">Unit to convert to: </label>
                     <select name="to" id="to">
-                        <option value="Millimeters">Millimeters</option>
-                        <option value="Centimeters">Centimeters</option>
-                        <option value="Meters">Meters</option>
-                        <option value="Kilometers">Kilometers</option>
+                        <option value={0}>Millimeters</option>
+                        <option value={1}>Centimeters</option>
+                        <option value={2}>Meters</option>
+                        <option value={3}>Kilometers</option>
                     </select>
                 </div>
-                <input type="submit" value="Convert" />
+                <input type="submit" value="Convert"/>
             </form>
-            
+
             <h1>Result: {data}</h1>
         </div>
     )

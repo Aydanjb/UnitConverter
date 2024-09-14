@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using UnitConverter.Models;
 
 namespace UnitConverter.Controllers;
 
@@ -9,13 +10,10 @@ public class UnitConverterController : Controller
     [HttpPost]
     public int Test([FromForm] FormData data)
     {
-        return data.Length;
+        if (data is { From: Unit.Millimeter, To: Unit.Centimeter })
+        {
+            return data.Value / 10;
+        }
+        return data.Value;
     }
-}
-
-public class FormData
-{
-    public int Length { get; set; }
-    public string From { get; set; }
-    public string To { get; set; }
 }
