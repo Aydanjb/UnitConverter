@@ -8,6 +8,34 @@
 
     <ItemGroup>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+        <PackageReference Include="xunit.assert" Version="2.5.3" />
+        <PackageReference Include="xunit.extensibility.core" Version="2.5.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="UnitConverterTests\bin\**" />
+      <Compile Remove="UnitConverterTests\obj\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="UnitConverterTests\bin\**" />
+      <EmbeddedResource Remove="UnitConverterTests\obj\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="UnitConverterTests\bin\**" />
+      <Content Remove="UnitConverterTests\obj\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="UnitConverterTests\bin\**" />
+      <None Remove="UnitConverterTests\obj\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="UnitConverterTests\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="UnitConverterTests\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="UnitConverterTests\obj\UnitConverterTests.csproj.nuget.dgspec.json" />
     </ItemGroup>
 
 </Project>

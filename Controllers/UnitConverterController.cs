@@ -8,12 +8,8 @@ namespace UnitConverter.Controllers;
 public class UnitConverterController : Controller
 {
     [HttpPost]
-    public int Test([FromForm] FormData data)
+    public double Test([FromForm] FormData data)
     {
-        if (data is { From: Unit.Millimeter, To: Unit.Centimeter })
-        {
-            return data.Value / 10;
-        }
-        return data.Value;
+        return Length.Convert(data.Value, data.From, data.To);
     }
 }
