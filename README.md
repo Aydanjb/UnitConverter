@@ -8,7 +8,7 @@ A simple full-stack web app for converting between different units of measuremen
 - Weight: grams, kilograms
 - Temperature: celsius, fahrenheit
 
-## Screenshot
+## Screenshots
 
 ![image](https://github.com/user-attachments/assets/e55e3c40-ad8d-4fa0-b766-b92141097498)
 ![image](https://github.com/user-attachments/assets/78d7c9c9-589b-4ae2-9c50-460cf3f6e45f)
