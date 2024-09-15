@@ -1,7 +1,9 @@
 import React, {useState} from "react";
+import Forms from "./Forms.tsx";
 
 function App() {
     const [data, setData] = useState(0);
+    const [formType, setFormType] = useState(0);
     
     async function convert(formData: FormData) {
         await fetch('https://localhost:7116/api/UnitConverter', {method: 'post', body: formData})
@@ -12,7 +14,7 @@ function App() {
             });
         
     }
-    
+
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         const formData = new FormData(e.currentTarget as HTMLFormElement);
@@ -22,32 +24,10 @@ function App() {
     return (
         <div>
             <h1>Unit Converter</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="length">Enter length to convert: </label>
-                    <input name="value" id="length" />
-                </div>
-                <div>
-                    <label htmlFor="from">Unit to convert from: </label>
-                    <select name="from" id="from">
-                        <option value={0}>Millimeters</option>
-                        <option value={1}>Centimeters</option>
-                        <option value={2}>Meters</option>
-                        <option value={3}>Kilometers</option>
-                    </select>
-                </div>
-                <div>
-                    <label htmlFor="to">Unit to convert to: </label>
-                    <select name="to" id="to">
-                        <option value={0}>Millimeters</option>
-                        <option value={1}>Centimeters</option>
-                        <option value={2}>Meters</option>
-                        <option value={3}>Kilometers</option>
-                    </select>
-                </div>
-                <input type="submit" value="Convert"/>
-            </form>
-
+            <button onClick={() => setFormType(0)}>Length</button>
+            <button onClick={() => setFormType(1)}>Weight</button>
+            <button onClick={() => setFormType(2)}>Temperature</button>
+            <Forms submitFunction={handleSubmit} type={formType}/>  
             <h1>Result: {data}</h1>
         </div>
     )
