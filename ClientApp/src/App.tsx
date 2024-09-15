@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Forms from "./Components/Forms.tsx";
 
 function App() {
-    const [data, setData] = useState(0);
+    const [data, setData] = useState();
     const [formType, setFormType] = useState(0);
     
     async function convert(formData: FormData) {
@@ -23,13 +23,17 @@ function App() {
     }
     
     return (
-        <div>
-            <h1>Unit Converter</h1>
-            <button onClick={() => setFormType(0)}>Length</button>
-            <button onClick={() => setFormType(1)}>Weight</button>
-            <button onClick={() => setFormType(2)}>Temperature</button>
-            <Forms submitFunction={handleSubmit} type={formType}/>  
-            <h1>Result: {data}</h1>
+        <div className="flex flex-col gap-4 justify-center items-center h-screen">
+            <h1 className="text-6xl">Unit Converter</h1>
+            <div className="flex flex-row gap-2 text-2xl">
+                <button className="bg-blue-500 text-white rounded-md px-2 py-1" onClick={() => setFormType(0)}>Length</button>
+                <button className="bg-blue-500 text-white rounded-md px-2 py-1" onClick={() => setFormType(1)}>Weight</button>
+                <button className="bg-blue-500 text-white rounded-md px-2 py-1" onClick={() => setFormType(2)}>Temperature</button>
+            </div>
+            <div className="flex flex-col text-xl">
+                <Forms submitFunction={handleSubmit} type={formType}/>
+            </div>
+            <h1 className="m-2 text-3xl ">Result: {data}</h1>
         </div>
     )
 }

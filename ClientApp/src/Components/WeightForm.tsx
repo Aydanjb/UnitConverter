@@ -6,26 +6,24 @@ interface FormProps {
 
 export default function Form(props: FormProps) {
     return (
-        <form onSubmit={props.submitFunction}>
+        <form className="flex flex-col gap-2" onSubmit={props.submitFunction}>
             <div>
                 <label htmlFor="value">Enter weight to convert: </label>
-                <input name="value" id="value"/>
+                <input className="placeholder=transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none" name="value" placeholder="1000"/>
             </div>
             <div>
-                <label htmlFor="from">Unit to convert from: </label>
-                <select name="from" id="from">
+                <select className="p-2 w-full" name="from" id="from">
                     <option value={4} selected={true}>Grams</option>
                     <option value={5}>Kilograms</option>
                 </select>
             </div>
             <div>
-                <label htmlFor="to">Unit to convert to: </label>
-                <select name="to" id="to">
+                <select className="p-2 w-full" name="to" id="to">
                     <option value={4}>Grams</option>
                     <option value={5} selected={true}>Kilograms</option>
                 </select>
             </div>
-            <input type="submit" value="Convert"/>
+            <input className="bg-green-500 text-white rounded-md px-2 py-1" type="submit" value="Convert"/>
         </form>
     )
 }

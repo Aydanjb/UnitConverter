@@ -6,26 +6,24 @@ interface FormProps {
 
 export default function TemperatureForm(props: FormProps) {
     return (
-        <form onSubmit={props.submitFunction}>
+        <form className="flex flex-col gap-2" onSubmit={props.submitFunction}>
             <div>
                 <label htmlFor="value">Enter temperature to convert: </label>
-                <input name="value" id="value"/>
+                <input className="placeholder=transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none" name="value" placeholder="32"/>
             </div>
             <div>
-                <label htmlFor="from">Unit to convert from: </label>
-                <select name="from" id="from">
+                <select className="p-2 w-full" name="from" id="from">
                     <option value={6} selected={true}>Celsius</option>
                     <option value={7}>Fahrenheit</option>
                 </select>
             </div>
             <div>
-                <label htmlFor="to">Unit to convert to: </label>
-                <select name="to" id="to">
+                <select className="p-2 w-full" name="to" id="to">
                     <option value={6}>Celsius</option>
                     <option value={7} selected={true}>Fahrenheit</option>
                 </select>
             </div>
-            <input type="submit" value="Convert"/>
+            <input className="bg-green-500 text-white rounded-md px-2 py-1" type="submit" value="Convert"/>
         </form>
     )
 }
