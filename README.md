@@ -1,7 +1,8 @@
 # Unit Converter
 A solution for the [Unit Converter](https://roadmap.sh/projects/unit-converter) challenge at [roadmap.sh](roadmap.sh)
 
-A simple full-stack web app for converting between different units of measurement. Built with ASP.NET, Typescript, Reactjs, and TailwindCSS.
+A simple full-stack web app for converting between different units of measurement. 
+Built with ASP.NET, Typescript, Reactjs, and TailwindCSS.
 
 ## Features
 - Length: millimeters, centimeters, meters, kilometers
