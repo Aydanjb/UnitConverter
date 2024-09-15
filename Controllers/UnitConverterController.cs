@@ -10,6 +10,15 @@ public class UnitConverterController : Controller
     [HttpPost]
     public double Test([FromForm] FormData data)
     {
-        return Length.Convert(data.Value, data.From, data.To);
+        switch (data.Property)
+        {
+            default:
+                return Length.Convert(data.Value, data.From, data.To);
+            case Property.Weight:
+                return Weight.Convert(data.Value, data.From, data.To);
+            case Property.Temperature:
+                return Temperature.Convert(data.Value, data.From, data.To);
+        }
+
     }
 }

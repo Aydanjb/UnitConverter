@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import Forms from "./Forms.tsx";
+import Forms from "./Components/Forms.tsx";
 
 function App() {
     const [data, setData] = useState(0);
@@ -18,6 +18,7 @@ function App() {
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         const formData = new FormData(e.currentTarget as HTMLFormElement);
+        formData.append('property', formType.toString())
         convert(formData);
     }
     

@@ -13,7 +13,7 @@ export default function LengthForm(props: FormProps) {
             </div>
             <div>
                 <label htmlFor="from">Unit to convert from: </label>
-                <select name="to" id="to">
+                <select name="from" id="from">
                     <option value={0} selected={true}>Millimeters</option>
                     <option value={1}>Centimeters</option>
                     <option value={2}>Meters</option>

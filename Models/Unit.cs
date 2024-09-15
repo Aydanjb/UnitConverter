@@ -5,5 +5,9 @@ public enum Unit
     Millimeter,
     Centimeter,
     Meter,
-    Kilometer
+    Kilometer,
+    Grams,
+    Kilograms,
+    Celsius,
+    Fahrenheit
 }
